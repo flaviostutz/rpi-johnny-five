@@ -7,7 +7,7 @@ Use "FROM flaviostutz/rpi-johnny-five" on your Dockerfile
 
 You can connect to the container using SSH in order to test your code locally so that you avoid buiding the container at each run:
  - Start the container with "docker run -it -p 2222:22 flaviostutz/rpi-johnny-five" on your Raspberry connected to Arduino
- - Connect to container using "ssh [raspberry ip] -p 2222"
+ - Connect to container using "ssh root@[raspberry ip]:2222" (password is "root")
  - Checkout you repository inside the container (you have git there!)
  - Code using nano or vi (!!!)
  - Run your node script and see what happens
