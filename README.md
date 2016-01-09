@@ -15,9 +15,9 @@ You can connect to the container using SSH in order to test your code locally so
 My preferred way of coding to Raspberry containers is to mount the filesystem of the container to my local machine so that I can use my graphic tools:
  - Start the container with "docker run -it -p 2222:22 flaviostutz/rpi-johnny-five" on your Raspberry connected to Arduino
  - Install "sshfs" on your local machine (available for Linux and MacOS)
- - Mount the container filesystem to your machine doing "sshfs -p 2222 /whatever/container root@[raspberryip]:/opt"
+ - Mount the container filesystem to your machine doing "sshfs root@[raspberryip]:/opt /whatever/container -p 2222"
  - Put your code to /whatever/container and use your tools there
- - Connect to container using "ssh [raspberry ip] -p 2222"
+ - Connect to container using "ssh root@[raspberry ip]:2222" (password is "root")
  - Run your code (node /opt/test.js and so on)
  - I use to checkout my git repository inside the container. You can "git commit" from the inside or from your machine. Both works :)
  - When code is ready perform the container build from the outside
