@@ -2,7 +2,7 @@ FROM hypriot/rpi-iojs:1.4.1
 MAINTAINER Flavio Stutz <flaviostutz@gmail.com>
 
 RUN apt-get update && \
-    apt-get install -y make python python-dev python-pip python-virtualenv ssh openssh-server git ca-certificates \
+    apt-get install -y build-essential g++ make python python-dev python-pip python-virtualenv ssh openssh-server git ca-certificates \
     --no-install-recommends
 
 RUN npm update && \
@@ -17,7 +17,10 @@ RUN mkdir /var/run/sshd \
 ENV NOTVISIBLE "in users profile"
 
 
-RUN rm -rf /var/lib/apt/lists/
+RUN apt-get remove build-essential g++ make -y && \
+    apt-get autoremove -y && \
+    apt-get autoclean -y && \
+    rm -rf /var/lib/apt/lists/
 
 EXPOSE 22
 
