@@ -6,14 +6,14 @@ Use "FROM flaviostutz/rpi-johnny-five" on your Dockerfile
 # Developers
 
 You can connect to the container using SSH in order to test your code locally so that you avoid buiding the container at each run:
- - Start the container with "docker run -it -p 2222:22 flaviostutz/rpi-johnny-five" on your Raspberry connected to Arduino
+ - Start the container with "docker run -it --privileged -p 2222:22 flaviostutz/rpi-johnny-five" on your Raspberry connected to Arduino
  - Connect to container using "ssh root@[raspberry ip]:2222" (password is "root")
  - Checkout you repository inside the container (you have git there!)
  - Code using nano or vi (!!!)
  - Run your node script and see what happens
 
 My preferred way of coding to Raspberry containers is to mount the filesystem of the container to my local machine so that I can use my graphic tools:
- - Start the container with "docker run -it -p 2222:22 flaviostutz/rpi-johnny-five" on your Raspberry connected to Arduino
+ - Start the container with "docker run -it --privileged -p 2222:22 flaviostutz/rpi-johnny-five" on your Raspberry connected to Arduino
  - Install "sshfs" on your local machine (available for Linux and MacOS)
  - Mount the container filesystem to your machine doing "sshfs root@[raspberryip]:/opt /whatever/container -p 2222"
  - Put your code to /whatever/container and use your tools there
