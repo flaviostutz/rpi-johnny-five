@@ -2,7 +2,7 @@ FROM hypriot/rpi-node:5.4
 MAINTAINER Flavio Stutz <flaviostutz@gmail.com>
 
 RUN apt-get update && \
-    apt-get install -y build-essential python python-dev python-pip python-virtualenv ssh openssh-server git nano \
+    apt-get install -y build-essential make g++ python python-dev python-pip python-virtualenv ssh openssh-server git nano \
     --no-install-recommends
 
 RUN npm update && \
