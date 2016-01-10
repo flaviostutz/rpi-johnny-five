@@ -2,7 +2,7 @@ FROM hypriot/rpi-iojs:1.4.1
 MAINTAINER Flavio Stutz <flaviostutz@gmail.com>
 
 RUN apt-get update && \
-    apt-get install -y python python-dev python-pip python-virtualenv ssh openssh-server git ca-certificates \
+    apt-get install -y make python python-dev python-pip python-virtualenv ssh openssh-server git ca-certificates \
     --no-install-recommends
 
 RUN npm update && \
