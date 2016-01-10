@@ -21,3 +21,4 @@ My preferred way of coding to Raspberry containers is to mount the filesystem of
  - Run your code (node /opt/test.js and so on)
  - I use to checkout my git repository inside the container. You can "git commit" from the inside or from your machine. Both works :)
  - When code is ready perform the container build from the outside
+ - On Windows you can use SFTP Net Drive (https://www.eldos.com/sftp-net-drive/download-release.php) for directory mounting
