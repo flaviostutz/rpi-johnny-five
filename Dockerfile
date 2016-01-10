@@ -1,4 +1,4 @@
-FROM hypriot/rpi-node:5.4
+FROM hypriot/rpi-node:5.3-wheezy
 MAINTAINER Flavio Stutz <flaviostutz@gmail.com>
 
 RUN apt-get update && \
