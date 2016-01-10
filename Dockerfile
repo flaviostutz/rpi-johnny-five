@@ -6,7 +6,7 @@ RUN apt-get update && \
     --no-install-recommends
 
 RUN npm update && \
-    npm install johnny-five
+    npm install -g johnny-five
 
 
 RUN mkdir /var/run/sshd \
