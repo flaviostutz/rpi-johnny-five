@@ -5,6 +5,8 @@ Use "FROM flaviostutz/rpi-johnny-five" on your Dockerfile
 
 # Developers
 
+Place the NodeJS application files on "/data/[your app]", so that Node can find the already built-in johnny-five module and its dependencies.
+
 You can connect to the container using SSH in order to test your code locally so that you avoid buiding the container at each run:
  - Start the container with "docker run -it --privileged -p 2222:22 flaviostutz/rpi-johnny-five" on your Raspberry connected to Arduino
  - Connect to container using "ssh root@[raspberry ip]:2222" (password is "root")
@@ -15,7 +17,7 @@ You can connect to the container using SSH in order to test your code locally so
 My preferred way of coding to Raspberry containers is to mount the filesystem of the container to my local machine so that I can use my graphic tools:
  - Start the container with "docker run -it --privileged -p 2222:22 flaviostutz/rpi-johnny-five" on your Raspberry connected to Arduino
  - Install "sshfs" on your local machine (available for Linux and MacOS)
- - Mount the container filesystem to your machine doing "sshfs root@[raspberryip]:/opt /whatever/container -p 2222"
+ - Mount the container filesystem to your machine doing "sshfs root@[raspberryip]:/data /whatever/container -p 2222"
  - Put your code to /whatever/container and use your tools there
  - Connect to container using "ssh root@[raspberry ip]:2222" (password is "root")
  - Run your code (node /opt/test.js and so on)
