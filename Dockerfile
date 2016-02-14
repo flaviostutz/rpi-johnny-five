@@ -19,7 +19,7 @@ RUN cd /tmp && \
 RUN npm update && \
     export USER=root && \
     export HOME=/tmp && \
-    npm install --unsafe-perm -g johnny-five
+    npm install --unsafe-perm -g johnny-five@0.9.17
 
 
 #Install SSH for developer access
@@ -32,6 +32,15 @@ RUN ln -s /usr/local/lib/node_modules/ /opt/node_modules && \
     cp /opt/node_modules/johnny-five/node_modules/serialport /opt/node_modules/ -R && \
     cp /opt/node_modules/johnny-five/node_modules/firmata /opt/node_modules/ -R
 ADD /src/sample /opt/sample
+
+RUN cd /opt && \
+    npm install -g async@1.5.2 && \
+    npm install -g mqtt@1.7.0 && \
+    npm install -g raspi-io@5.2.0 && \
+    npm install -g express@4.13.4 && \
+    npm install -g events@1.1.0 && \
+    npm install -g util@0.10.3 && \
+    npm install -g config@1.19.0
 
 ENV NOTVISIBLE "in users profile"
 
