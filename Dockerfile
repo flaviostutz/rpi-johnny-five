@@ -41,7 +41,9 @@ RUN cd /opt && \
     npm install -g express@4.13.4 && \
     npm install -g events@1.1.0 && \
     npm install -g util@0.10.3 && \
-    npm install -g config@1.19.0
+    npm install -g config@1.19.0 && \
+    npm install -g unit.js@2.0.0 && \
+    npm install -g signal-control-utils@1.1.0
 
 ENV NOTVISIBLE "in users profile"
 
